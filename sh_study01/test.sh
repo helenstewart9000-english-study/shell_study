@@ -5,9 +5,16 @@
 #done
 #echo "output->$input_v"
 
-#不满足条件的循环
-until [ "$in_v" == "y" -o "$in_v" == "Y" ]; do
-    read -p "in->" in_v
-done
+##不满足条件的循环
+#until [ "$in_v" == "y" -o "$in_v" == "Y" ]; do
+#    read -p "in->" in_v
+#done
+#
+#echo "out->"$in_v
 
-echo "out->"$in_v
+users=$(cut -d ":" -f1 /etc/passwd)
+
+for username in $users:; do
+  id $user
+  finger $username
+done
